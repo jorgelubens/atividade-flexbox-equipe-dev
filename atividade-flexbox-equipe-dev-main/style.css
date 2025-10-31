@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --cor-primaria: #111;
+  --cor-secundaria: #f6f6f6;
+  --cor-terciaria: #191970	; /* <- ATIVIDADE ---- trocar A COR */
+  --cor-hover: #272727;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--cor-secundaria);
+  background-color: var(--cor-primaria);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ---------- CABEÇALHO ---------- */
+.cabecalho {
+  background-color: var(--cor-terciaria);
+  text-align: center;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* MENU */
+.menu {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.menu__link {
+  text-decoration: none;
+  color: var(--cor-secundaria);
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+  border-bottom: 3px solid transparent;
+}
+
+.menu__link:hover {
+  background-color: var(--cor-hover);
+}
+
+.menu__link.ativo {
+  border-bottom: 3px solid var(--cor-secundaria);
+}
+
+/* ---------- TÍTULO PRINCIPAL ---------- */
+.titulo-pagina {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--cor-secundaria);
+  background: linear-gradient(
+    90deg,
+    #ff0000, /* Vermelho */
+    #ffff00, /* Amarelo */
+    #00ff00, /* Verde */
+    #00ffff, /* Ciano */
+    #0000ff, /* Azul */
+    #ff00ff, /* Magenta */
+    #ff0000 /* Vermelho */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Compatibilidade com navegadores baseados em WebKit */
+  /* Torna o texto transparente para que o gradiente apareça */
+  color: transparent;
+  /* Define o tamanho da animação (o gradiente vai além do texto) */
+  background-size: 400%;
+  /* Aplica a animação ao texto */
+  animation: color-cycle 15s linear infinite;
+  @keyframes color-cycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    }
+}
+}
+
+/* ---------- CONTEÚDO PRINCIPAL ---------- */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+}
+
+.card {
+  background-color: var(--cor-hover);
+  border: 2px solid #00BFFF; /* <- ATIVIDADE ---- trocar por variável */
+  border-radius: 10px;
+  width: 250px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s;
+  background: linear-gradient(
+    90deg,
+    #ff0000, /* Vermelho */
+    #ffff00, /* Amarelo */
+    #00ff00, /* Verde */
+    #00ffff, /* Ciano */
+    #0000ff, /* Azul */
+    #ff00ff, /* Magenta */
+    #ff0000 /* Vermelho */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Compatibilidade com navegadores baseados em WebKit */
+  /* Torna o texto transparente para que o gradiente apareça */
+  color: transparent;
+  /* Define o tamanho da animação (o gradiente vai além do texto) */
+  background-size: 400%;
+  /* Aplica a animação ao texto */
+  animation: color-cycle 15s linear infinite;
+  @keyframes color-cycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    }
+}
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+  }
+
+  
+
+
+button {
+  background-color: var(--cor-terciaria);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: var(--cor-hover);
+  border: 2px solid var(--cor-terciaria);
+}
+
+/* ---------- PÁGINA SOBRE ---------- */
+.about {
+  flex-direction: column;
+  text-align: center;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+}
+
+/* ---------- RODAPÉ ---------- */
+.rodape {
+  background-color: var(--cor-terciaria);
+  text-align: center;
+  padding: 15px;
+  color: var(--cor-secundaria);
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+
+  .card {
+    width: 80%;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .titulo-pagina {
+    font-size: 1.5rem;
+  }
+}
