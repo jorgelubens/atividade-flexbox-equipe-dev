@@ -3,7 +3,7 @@
 :root {
   --cor-primaria: #111;
   --cor-secundaria: #f6f6f6;
-  --cor-terciaria: #fd2231; /* <- ATIVIDADE ---- trocar A COR */
+  --cor-terciaria: #191970	; /* <- ATIVIDADE ---- trocar A COR */
   --cor-hover: #272727;
 }
 
@@ -39,6 +39,7 @@ body {
   align-items: center;
 }
 
+
 .menu__link {
   text-decoration: none;
   color: var(--cor-secundaria);
@@ -66,6 +67,35 @@ body {
   font-weight: 600;
   margin-bottom: 30px;
   color: var(--cor-secundaria);
+  background: linear-gradient(
+    90deg,
+    #ff0000, /* Vermelho */
+    #ffff00, /* Amarelo */
+    #00ff00, /* Verde */
+    #00ffff, /* Ciano */
+    #0000ff, /* Azul */
+    #ff00ff, /* Magenta */
+    #ff0000 /* Vermelho */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Compatibilidade com navegadores baseados em WebKit */
+  /* Torna o texto transparente para que o gradiente apareça */
+  color: transparent;
+  /* Define o tamanho da animação (o gradiente vai além do texto) */
+  background-size: 400%;
+  /* Aplica a animação ao texto */
+  animation: color-cycle 15s linear infinite;
+  @keyframes color-cycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    }
+}
 }
 
 /* ---------- CONTEÚDO PRINCIPAL ---------- */
@@ -81,12 +111,41 @@ body {
 
 .card {
   background-color: var(--cor-hover);
-  border: 2px solid #888; /* <- ATIVIDADE ---- trocar por variável */
+  border: 2px solid #00BFFF; /* <- ATIVIDADE ---- trocar por variável */
   border-radius: 10px;
   width: 250px;
   text-align: center;
   padding: 20px;
   transition: transform 0.3s;
+  background: linear-gradient(
+    90deg,
+    #ff0000, /* Vermelho */
+    #ffff00, /* Amarelo */
+    #00ff00, /* Verde */
+    #00ffff, /* Ciano */
+    #0000ff, /* Azul */
+    #ff00ff, /* Magenta */
+    #ff0000 /* Vermelho */
+  );
+  background-clip: text;
+  -webkit-background-clip: text; /* Compatibilidade com navegadores baseados em WebKit */
+  /* Torna o texto transparente para que o gradiente apareça */
+  color: transparent;
+  /* Define o tamanho da animação (o gradiente vai além do texto) */
+  background-size: 400%;
+  /* Aplica a animação ao texto */
+  animation: color-cycle 15s linear infinite;
+  @keyframes color-cycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+    }
+}
 }
 
 .card:hover {
@@ -99,7 +158,10 @@ body {
   border-radius: 50%;
   margin-bottom: 15px;
   object-fit: cover;
-}
+  }
+
+  
+
 
 button {
   background-color: var(--cor-terciaria);
@@ -141,6 +203,7 @@ button:hover {
     flex-direction: column;
     padding: 20px;
   }
+
 
   .card {
     width: 80%;
